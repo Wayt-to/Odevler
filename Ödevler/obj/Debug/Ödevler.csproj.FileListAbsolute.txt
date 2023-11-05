@@ -1,0 +1,7 @@
+C:\Users\61vah\source\repos\Ödevler\Ödevler\obj\Debug\Ödevler.csproj.AssemblyReference.cache
+C:\Users\61vah\source\repos\Ödevler\Ödevler\obj\Debug\Ödevler.csproj.CoreCompileInputs.cache
+C:\Users\61vah\source\repos\Ödevler\Ödevler\bin\Debug\Ödevler.exe.config
+C:\Users\61vah\source\repos\Ödevler\Ödevler\bin\Debug\Ödevler.exe
+C:\Users\61vah\source\repos\Ödevler\Ödevler\bin\Debug\Ödevler.pdb
+C:\Users\61vah\source\repos\Ödevler\Ödevler\obj\Debug\Ödevler.exe
+C:\Users\61vah\source\repos\Ödevler\Ödevler\obj\Debug\Ödevler.pdb
