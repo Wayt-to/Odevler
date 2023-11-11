@@ -446,6 +446,85 @@ namespace Ödevler
 
             #endregion
 
+            #region 1 den 20 e kadar fibonacci serisini yazdır.
+
+            ////0 1 1 2 3 5 8 13 21
+
+            //int sayi1 = 0;
+            //int sayi2 = 1;
+            //int sayi3 = 0;
+            //int sayac = 0;
+            //Console.Write("Kaç aşamalı Fibonacci serisi istiyorsunuz ? : ");
+            //int asama = Convert.ToInt32(Console.ReadLine());
+
+            //Console.Write(" " + sayi1 + " \n " + sayi2 + "\n ");
+            //while (sayac <= asama)
+            //{
+            //    sayi3 = sayi1 + sayi2;
+
+            //    Console.Write(sayi3 + "\n ");
+
+            //    sayi1 = sayi2;
+            //    sayi2 = sayi3;
+            //    sayac++;
+            //}
+
+            #endregion
+
+            #region Konsoldan alınan 10 sayının ortalaması
+
+
+            //int sc = 1;
+            //double toplam = 0;
+
+            //while (sc <= 10)
+            //{
+
+            //    Console.WriteLine("Lütfen "+ sc+". sayı giriniz : ");
+
+            //    double sayi = Convert.ToDouble(Console.ReadLine());
+            //    toplam += sayi;
+            //    sc++;
+
+            //}
+            //Console.Write("10 sayının ortalaması : " + (toplam/10)+ "\n\n");
+            #endregion
+
+            #region Konsoldan alınan 10 sayının tek olanlarının ayrı, çift olanlarının ayrı ortalamasını alınız
+
+
+            //int sc = 1;
+            //double ciftToplam = 0;
+            //double tekToplam = 0;
+            //int ciftAdet = 0;
+            //int tekAdet = 0;
+
+            //while (sc <= 10)
+            //{
+
+            //    Console.WriteLine("Lütfen " + sc + ". sayı giriniz : ");
+
+            //    double sayi = Convert.ToDouble(Console.ReadLine());
+            //    if (sayi%2==0)
+            //    {
+            //        ciftToplam += sayi;
+            //        ciftAdet++;
+            //    }
+            //    else
+            //    {
+            //        tekAdet++;
+            //        tekToplam += sayi;
+            //    }
+            //    sc++;
+
+            //}
+            //Console.WriteLine("TEK SAYILARIN ORTALAMASI : "+ tekToplam/tekAdet);
+            //Console.WriteLine("ÇİFT SAYILARIN ORTALAMASI : "+ ciftToplam/ciftAdet);
+
+
+            #endregion
+
+
 
         }
     }
