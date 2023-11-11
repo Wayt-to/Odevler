@@ -7,6 +7,7 @@ using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Ödevler
 {
@@ -352,17 +353,96 @@ namespace Ödevler
             //    }
             //}
 
-            Console.Write("\n Lütfen ilk sayıyı giriniz : ");
-            double sayi1 = Convert.ToDouble(Console.ReadLine());
-            Console.Write("\n Lütfen ikinci sayıyı giriniz : ");
-            double sayi2 = Convert.ToDouble(Console.ReadLine());
-            Console.Write("\n Lütfen yapılmasını istediğiniz işlem operatörünü giriniz (+,-,*,/) : ");
-            string oper = Console.ReadLine();
+            ////Console.Write("\n Lütfen ilk sayıyı giriniz : ");
+            ////double sayi1 = Convert.ToDouble(Console.ReadLine());
+            ////Console.Write("\n Lütfen ikinci sayıyı giriniz : ");
+            ////double sayi2 = Convert.ToDouble(Console.ReadLine());
+            ////Console.Write("\n Lütfen yapılmasını istediğiniz işlem operatörünü giriniz (+,-,*,/) : ");
+            ////string oper = Console.ReadLine();
 
 
 
 
 
+
+            #endregion
+
+            #region Kullanıcıdan alınan değerden 100 e kadar sayıların çift olanlarını yaz
+
+            //Console.Write("Lütfen 0 ile 100 arasında bir tamsayı giriniz : ");
+            //int sayi = Convert.ToInt32(Console.ReadLine());
+
+            //while (sayi <= 100)
+            //{
+            //    int mod = sayi % 2;
+            //    if (mod == 0)
+            //    {
+            //        Console.WriteLine(sayi);
+            //        sayi++;
+            //    }
+            //    sayi++;
+
+
+            //}
+
+            #endregion
+
+            #region Canlı Hava Durumu
+
+            ////Eskişehir İstanbul Ankara arası seçim ile canlı havadurumu
+
+
+
+            //string apikey = "e4b7070abab1899610fd58316c8d4c53";
+
+            //Console.Write("1)Eskişehir\n2)İstanbul\n3)İzmir\n4)Trabzon\nHangi Şehirin Hava Durumunu Öğrenmek İstersiniz ? : ");
+
+            //string giris = Console.ReadLine();
+
+            //if (giris == "1")
+            //{
+            //    string linkesk = "https://api.openweathermap.org/data/2.5/weather?q=Eskişehir&lang=tr&units=metric&mode=xml&appid=" + apikey;
+            //    XDocument havadurumu = XDocument.Load(linkesk);
+            //    string havasicaklik = havadurumu.Descendants("temperature").ElementAt(0).Attribute("value").Value;
+            //    string durum = havadurumu.Descendants("weather").ElementAt(0).Attribute("value").Value;
+            //    string nem = havadurumu.Descendants("humidity").ElementAt(0).Attribute("value").Value;
+            //    string yuzde = havadurumu.Descendants("humidity").ElementAt(0).Attribute("unit").Value;
+
+            //    Console.WriteLine("| Eskişehir için sıcaklık : " + havasicaklik + " C°" + "\n| Hava Durumu : " + durum + "\n| Nem oranı : " + yuzde + nem);
+
+            //}
+            //if (giris == "2")
+            //{
+            //    string linkist = "https://api.openweathermap.org/data/2.5/weather?q=İstanbul&lang=tr&units=metric&mode=xml&appid=" + apikey;
+            //    XDocument havadurumu = XDocument.Load(linkist);
+            //    string havasicaklik = havadurumu.Descendants("temperature").ElementAt(0).Attribute("value").Value;
+            //    string durum = havadurumu.Descendants("weather").ElementAt(0).Attribute("value").Value;
+            //    string nem = havadurumu.Descendants("humidity").ElementAt(0).Attribute("value").Value;
+            //    string yuzde = havadurumu.Descendants("humidity").ElementAt(0).Attribute("unit").Value;
+            //    Console.WriteLine("| İstanbul için sıcaklık : " + havasicaklik + " C°" + "\n| Hava Durumu : " + durum + "\n| Nem oranı : " + yuzde + nem);
+            //}
+            //if (giris == "3")
+            //{
+            //    string linkizmir = "https://api.openweathermap.org/data/2.5/weather?q=İzmir&lang=tr&units=metric&mode=xml&appid=" + apikey;
+            //    XDocument havadurumu = XDocument.Load(linkizmir);
+            //    string havasicaklik = havadurumu.Descendants("temperature").ElementAt(0).Attribute("value").Value;
+            //    string durum = havadurumu.Descendants("weather").ElementAt(0).Attribute("value").Value;
+            //    string nem = havadurumu.Descendants("humidity").ElementAt(0).Attribute("value").Value;
+            //    string yuzde = havadurumu.Descendants("humidity").ElementAt(0).Attribute("unit").Value;
+            //    Console.WriteLine("| İzmir için sıcaklık : " + havasicaklik + " C°" + "\n| Hava Durumu : " + durum + "\n| Nem oranı : " + yuzde + nem);
+
+            //}
+            //if (giris == "4")
+            //{
+            //    string linktrb = "https://api.openweathermap.org/data/2.5/weather?q=Trabzon&lang=tr&units=metric&mode=xml&appid=" + apikey;
+            //    XDocument havadurumu = XDocument.Load(linktrb);
+            //    string havasicaklik = havadurumu.Descendants("temperature").ElementAt(0).Attribute("value").Value;
+            //    string durum = havadurumu.Descendants("weather").ElementAt(0).Attribute("value").Value;
+            //    string nem = havadurumu.Descendants("humidity").ElementAt(0).Attribute("value").Value;
+            //    string yuzde = havadurumu.Descendants("humidity").ElementAt(0).Attribute("unit").Value;
+            //    Console.WriteLine("| Trabzon için sıcaklık : " + havasicaklik + " C°" + "\n| Hava Durumu : " + durum + "\n| Nem oranı : " + yuzde + nem);
+
+            //}
 
             #endregion
 
