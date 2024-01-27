@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -446,9 +447,9 @@ namespace Ödevler
 
             #endregion
 
-            #region 1 den 20 e kadar fibonacci serisini yazdır.
+            #region fibonacci serisini yazdır.
 
-            ////0 1 1 2 3 5 8 13 21
+            //0 1 1 2 3 5 8 13 21
 
             //int sayi1 = 0;
             //int sayi2 = 1;
@@ -457,12 +458,12 @@ namespace Ödevler
             //Console.Write("Kaç aşamalı Fibonacci serisi istiyorsunuz ? : ");
             //int asama = Convert.ToInt32(Console.ReadLine());
 
-            //Console.Write(" " + sayi1 + " \n " + sayi2 + "\n ");
+            //Console.Write( sayi1 + " " + sayi2+" ");
             //while (sayac <= asama)
             //{
             //    sayi3 = sayi1 + sayi2;
 
-            //    Console.Write(sayi3 + "\n ");
+            //    Console.Write(sayi3 + " ");
 
             //    sayi1 = sayi2;
             //    sayi2 = sayi3;
@@ -502,10 +503,10 @@ namespace Ödevler
             //while (sc <= 10)
             //{
 
-            //    Console.WriteLine("Lütfen " + sc + ". sayı giriniz : ");
+            //    Console.Write("Lütfen " + sc + ". sayı giriniz : ");
 
             //    double sayi = Convert.ToDouble(Console.ReadLine());
-            //    if (sayi%2==0)
+            //    if (sayi % 2 == 0)
             //    {
             //        ciftToplam += sayi;
             //        ciftAdet++;
@@ -518,14 +519,561 @@ namespace Ödevler
             //    sc++;
 
             //}
-            //Console.WriteLine("TEK SAYILARIN ORTALAMASI : "+ tekToplam/tekAdet);
-            //Console.WriteLine("ÇİFT SAYILARIN ORTALAMASI : "+ ciftToplam/ciftAdet);
+            //Console.WriteLine($"TEK SAYILARIN ORTALAMASI : { tekToplam / tekAdet}\n *-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n " );
+            //Console.WriteLine("ÇİFT SAYILARIN ORTALAMASI : " + ciftToplam / ciftAdet);
 
 
             #endregion
 
+            #region     While Uygulamalarının For Adaptasyonları
 
 
+
+
+            #endregion
+
+            #region Konsol tahmin oyunu
+
+            //1. oyuncu tarafından Konsoldan alınan sayı var konsol temizlenecek, 2. oyuncu bilgisayarın başına oturacak lütfen tahmin giriniz çıkacak tahmin girilecek tahmini küçük kalmışsa lütfen daha büyük bir sayıyla deneyin diyecek, büyükse lütfen daha küçük bir sayı giriniz diyecek.10 denemede bulabilirse tebrikler kazandınız bulamazsa üzgünüz kaybettiniz + girilen sayı= sayi denilecek
+            //Console.Clear
+
+            //Console.Write("1.Oyuncu 2.Oyuncuya Göstermeden Sayınızı Giriniz : ");
+            //int sayi = Convert.ToInt32(Console.ReadLine());
+            //Console.Clear();
+            //Console.WriteLine("Hoşgeldiniz 1. Oyuncu Bir Sayı Belirledi. 10 Hakkınız Var. İyi Şanslar...\n");
+            //bool kazanma = false;
+            //for (int i = 1; i <= 10;i++)
+            //{
+
+            //    Console.Write($"{i}. Hakkınız, lütfen tahmininizi giriniz :");
+            //    int tahmin = Convert.ToInt32(Console.ReadLine());
+
+            //    if (tahmin == sayi)
+            //    {
+            //        Console.WriteLine("Tebrikler Kazandınız :)");
+            //        kazanma = true;
+            //        break;
+            //    }
+            //    else 
+            //    {
+            //         int fark = sayi - tahmin;
+            //         if (fark < 0)
+            //         {
+            //             Console.WriteLine("Bilemediniz,  daha küçük bir sayı girmelisiniz.");
+            //         }
+            //         else if (fark > 0)
+            //         {
+            //             Console.WriteLine("Bilemediniz,  daha büyük bir sayı girmelisiniz");
+            //         }
+
+            //    }
+
+            //}
+            //if (!kazanma)
+            //{
+            //    Console.WriteLine($"Üzgünüz Bulamadınız. Sayı {sayi} olmalıydı.");
+            //}
+
+            //Tek oyunculu versiyon
+
+            //Random rnd = new Random();
+            //int sayi = rnd.Next(10, 100);
+            //bool kazanma = false;
+
+
+            //Console.WriteLine("Oyuna Hoşgeldiniz");
+            //Console.WriteLine("lütfen Zorluk Seviyesi Seçiniz");
+            //Console.WriteLine("1)Kolar(20 Hak)");
+            //Console.WriteLine("2)Orta(10 Hak)");
+            //Console.WriteLine("3)Zor(5 Hak)");
+
+            //string zorlukSecim = Console.ReadLine();
+            //int hak = 0;
+            //switch (zorlukSecim)
+            //{
+            //    case "1": hak = 20;break;
+            //    case "2": hak = 10;break;
+            //    case "3": hak = 5;break;
+            //}
+            //for (int i = 0; i < hak; i++)
+            //{
+            //    Console.WriteLine("Lütfen Tahmin Giriniz : ");
+            //    int tahmin = Convert.ToInt32(Console.ReadLine());
+
+            //    if (tahmin == sayi)
+            //    {
+            //        Console.WriteLine("Tebrikler Kazadınız");
+            //        kazanma = true;
+            //        break;
+            //    }
+            //    else if (tahmin <sayi)
+            //    {
+            //        Console.WriteLine("Daha büyük bir sayı giriniz");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Lütfen daha küçük bir sayı giriniz");
+
+            //    }
+
+            //}
+            //if (kazanma ==false)
+            //{
+            //    Console.WriteLine("maalesef kazanamadınız");
+            //}
+
+
+            #endregion
+
+            #region Konsol tahmin oyunu 2
+
+            // ilk oyunun aynısı haklara göre zorluk kolay (20 hak) orta (10 hak) zor (5 hak) eklenecek
+
+            //Console.Write("1.Oyuncu 2.Oyuncuya Göstermeden Sayınızı Giriniz : ");
+            //int sayi = Convert.ToInt32(Console.ReadLine());
+            //Console.Clear();
+            //Console.Write("Hoşgeldiniz 1. Oyuncu Bir Sayı Belirledi. Lütfen İstediğiniz Zorluk Seviyesini Belirleyin :\n 1)Kolay (20 Tahmin Hakkı)\n 2)Orta (10 Tahmin Hakkı)\n 3)Zor (5 Tahmin Hakkı)\n ");
+            //string zorluk = Console.ReadLine();
+            //Console.WriteLine(" İyi Şanslar\n");
+            //if (zorluk == "1")
+            //{
+            //    bool kazanma = false;
+            //    for (int i = 1; i <= 10; i++)
+            //    {
+
+            //        Console.Write($"{i}. Hakkınız, lütfen tahmininizi giriniz :");
+            //        int tahmin = Convert.ToInt32(Console.ReadLine());
+
+            //        if (tahmin == sayi)
+            //        {
+            //            Console.WriteLine("Tebrikler Kazandınız :)");
+            //            kazanma = true;
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            int fark = sayi - tahmin;
+            //            if (fark < 0)
+            //            {
+            //                Console.WriteLine("Bilemediniz,  daha küçük bir sayı girmelisiniz.");
+            //            }
+            //            else if (fark > 0)
+            //            {
+            //                Console.WriteLine("Bilemediniz,  daha büyük bir sayı girmelisiniz");
+            //            }
+
+            //        }
+
+            //    }
+            //    if (!kazanma)
+            //    {
+            //        Console.WriteLine($"Üzgünüz Bulamadınız. Sayı {sayi} olmalıydı.");
+            //    }
+            //}
+            //if (zorluk == "2")
+            //{
+            //    bool kazanma = false;
+            //    for (int i = 1; i <= 10; i++)
+            //    {
+
+            //        Console.Write($"{i}. Hakkınız, lütfen tahmininizi giriniz :");
+            //        int tahmin = Convert.ToInt32(Console.ReadLine());
+
+            //        if (tahmin == sayi)
+            //        {
+            //            Console.WriteLine("Tebrikler Kazandınız :)");
+            //            kazanma = true;
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            int fark = sayi - tahmin;
+            //            if (fark < 0)
+            //            {
+            //                Console.WriteLine("Bilemediniz,  daha küçük bir sayı girmelisiniz.");
+            //            }
+            //            else if (fark > 0)
+            //            {
+            //                Console.WriteLine("Bilemediniz,  daha büyük bir sayı girmelisiniz");
+            //            }
+
+            //        }
+
+            //    }
+            //    if (!kazanma)
+            //    {
+            //        Console.WriteLine($"Üzgünüz Bulamadınız. Sayı {sayi} olmalıydı.");
+            //    }
+            //}
+            //if (zorluk == "3")
+            //{
+            //    bool kazanma = false;
+            //    for (int i = 1; i <= 5; i++)
+            //    {
+
+            //        Console.Write($"{i}. Hakkınız, lütfen tahmininizi giriniz :");
+            //        int tahmin = Convert.ToInt32(Console.ReadLine());
+
+            //        if (tahmin == sayi)
+            //        {
+            //            Console.WriteLine("Tebrikler Kazandınız :)");
+            //            kazanma = true;
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            int fark = sayi - tahmin;
+            //            if (fark < 0)
+            //            {
+            //                Console.WriteLine("Bilemediniz,  daha küçük bir sayı girmelisiniz.");
+            //            }
+            //            else if (fark > 0)
+            //            {
+            //                Console.WriteLine("Bilemediniz,  daha büyük bir sayı girmelisiniz");
+            //            }
+
+            //        }
+
+            //    }
+            //    if (!kazanma)
+            //    {
+            //        Console.WriteLine($"Üzgünüz Bulamadınız. Sayı {sayi} olmalıydı.");
+            //    }
+            //}
+            #endregion
+
+            #region Ödev Dizi içerisindeki çift sayıları yazdırınız
+
+            //int[] sayilar = { 5, 20, -90, 908, 23, -9876, 43, 1, 23, 43, 2 };
+            //for (int i = 0; i < sayilar.Length; i++)
+            //{
+            //    if (sayilar[i]%2==0)
+            //    {
+            //        Console.WriteLine(sayilar[i]);
+            //    }
+            //}
+
+            #endregion
+
+            #region Ödev Dizi İçerisindeki sayıların ortalamasını hesaplayınız
+
+            //int[] sayilar = { 5, 20, 25, 97, 12, 100, 63, 1, 23, 43, 2 };
+            //int toplam=0;
+            //int adet=0;
+            //foreach (int eleman in sayilar)
+            //{
+            //    toplam += eleman;
+            //    adet++;
+            //}
+            //Console.WriteLine("Dizideki Sayıların Ortalaması = "+(toplam/adet));
+            #endregion
+
+            #region Ödev Dizi İçerisindeki Çift Sayıların Ortalamasını Hesaplayınız
+
+            //int[] sayilar = { 5, 20, 25, 97, 12, 100, 63, 1, 23, 43, 2 };
+            //int ctoplam = 0;
+            //int cadet = 0;
+            //foreach (int eleman in sayilar)
+            //{
+            //    if (eleman %2 == 0)
+            //    {
+            //        ctoplam += eleman;
+            //        cadet++;
+            //    }
+            //}
+            //Console.WriteLine("Dizideki Sayıların Ortalaması = " + (ctoplam / cadet));
+
+            #endregion
+
+            #region Ödev Dizideki Çift Sayıların ortalamasının genel ortalmaya yüzdesini hesaplayınız
+
+            //int[] sayilar = { 5, 20, 25, 97, 12, 100, 63, 1, 23, 43, 2 };
+            //int ctoplam = 0;
+            //int cadet = 0;
+            //int adet = 0;
+            //int toplam = 0;
+            //foreach (int eleman in sayilar)
+            //{
+            //    toplam += eleman;
+            //    adet++;
+            //    if (eleman % 2 == 0)
+            //    {
+            //        ctoplam += eleman;
+            //        cadet++;
+            //    }
+            //}
+            //Console.WriteLine("Dizideki Sayıların Ortalaması = " + (toplam / adet));
+            //Console.WriteLine("Dizideki Çift Sayıların Ortalaması = " + (ctoplam / cadet));
+            //Console.WriteLine("Çift Ortalamanın Genel Ortalamaya Yüzdesi = %" + ((ctoplam / cadet) * 100) / (toplam / adet));
+
+            #endregion
+
+            #region Kart Sormalı Adetli KDV'li Ürün Sepet Uygulaması
+
+            //string[] ogrenciler = { "serap", "hüseyin", "nasuh", "oğuz", "emre", "kaan", "nur", "vahit", "armağan", "yasin", "enes" };
+            //string[] kartlar = { "3124958212", "1380819549", "1219969301", "3259801860", "1658178308", "1117254916", "0143086088", "0575011844", "1116070404", "1645263364", "0707663364" };
+            //string[] urunler = { "domates", "biber", "patlıcan", "yumurta", "ekmek", "doritos", "kola" };
+            //double[] fiyat = { 28.90, 33.40, 24.10, 3.10, 7, 40, 45 };
+            //double[] kdv = { (fiyat[0]*1/100), (fiyat[1] * 1 / 100), (fiyat[2] * 1 / 100),(fiyat[3] * 1 / 100), (fiyat[4] * 1 / 100), (fiyat[5] * 1 / 100), (fiyat[6] * 8 / 100) };
+
+            //string secenek = "e";
+            //double toplam = 0;
+            //double kdvtop = 0;
+            //Console.WriteLine("WahitShop'a hoşgeldiniz. \n");
+            //Console.WriteLine("WahitKart Sahibi Misiniz? (e/h)");
+            //string kartvarmi = Console.ReadLine();
+            //Console.Clear();
+            //if (kartvarmi =="e")
+            //{
+            //    Console.WriteLine("Sepette %5 indirim kazanmak için kartınızı okutunuz : ");
+            //    string musteriKart = Console.ReadLine();
+            //    for (int i = 0; i < kartlar.Length; i++)
+            //    {
+            //        if (musteriKart == kartlar[i])
+            //        {
+            //            Console.WriteLine("Hoşgeldin " + ogrenciler[i]+". İyi alışverişler...");
+            //            
+            //            break;
+            //        }
+
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Sistemde kayıtlı bir karta sahip değilseniz indirimden faydalanamazsınız, iyi alışverişler.");
+            //}
+
+            //for (int i = 0; i < urunler.Length; i++)
+            //{
+            //    Console.WriteLine($"{(i + 1)} ){urunler[i]} \t {fiyat[i]} TL");
+            //}
+
+            //while (secenek =="e")
+            //{
+            //    Console.Write("Lütfen almak istediğiniz ürünün numarasını giriniz :");
+            //    int urunno = Convert.ToInt32(Console.ReadLine());
+            //    Console.Write("Kaç tane alacaksınız ? :");
+            //    int adet = Convert.ToInt32(Console.ReadLine());
+            //    toplam += fiyat[urunno - 1];
+            //    kdvtop += kdv[urunno - 1];
+            //    Console.WriteLine("Alısverişe Devam Etmek İstiyor Musunuz ? (e/h)");
+            //    secenek = Console.ReadLine();
+            //}
+
+            //Console.WriteLine("Ara toplam ="+(toplam-kdvtop)+" TL");
+            //Console.WriteLine("KDV = "+kdvtop+" TL");
+            //Console.WriteLine("Toplam = "+(toplam+kdvtop + " TL"));
+
+            #endregion
+
+            #region Ürün alımı isimli sorgu
+
+            //string secim = "e";
+            //string[] urunler = { "domates", "biber", "patlıcan", "yumurta", "ekmek", "doritos", "kola" };
+            //double[] fiyat = { 28.90, 33.40, 24.10, 3.10, 7, 40, 45 };
+            //double[] kdv = { (fiyat[0] * 1 / 100), (fiyat[1] * 1 / 100), (fiyat[2] * 1 / 100), (fiyat[3] * 1 / 100), (fiyat[4] * 1 / 100), (fiyat[5] * 1 / 100), (fiyat[6] * 8 / 100) };
+            //double toplam = 0;
+            //double kdvtop = 0;
+
+            //Console.WriteLine("WahitShop'a Hoşgeldinizzz...");
+
+            //for (int i = 0; i < urunler.Length; i++)
+            //{
+            //    Console.WriteLine($"{(i + 1)} ){urunler[i]} \t {fiyat[i]} TL");
+            //}
+
+            //while (secim =="e")
+            //{
+            //    Console.WriteLine("Ne Almak İstersiniz ? ");
+            //    string musterisecim = Console.ReadLine();
+            //    for (int i = 0; i < urunler.Length; i++)
+            //    {
+            //        if (musterisecim == urunler[i])
+            //        {
+            //            toplam += fiyat[i];
+            //            kdvtop += kdv[i];
+            //        }
+            //    }
+            //    Console.WriteLine("Alışverişe devam etmek istiyor musunuz ?");
+            //    secim = Console.ReadLine();
+
+            //}
+            //Console.WriteLine("Ara toplam = "+(toplam-kdvtop)+" TL");
+            //Console.WriteLine("KDV Toplamı = "+ kdvtop + " TL");
+            //Console.WriteLine("Toplam = "+toplam+" TL");
+
+            #endregion
+
+            #region İsimli-Birimli satın alım uygulaması
+
+            //string secim = "e";
+            //string[] urunler = { "domates", "biber", "patlıcan", "yumurta", "ekmek", "doritos", "kola" };
+            //string[] birim = { "kg", "kg", "kg", "adet", "adet", "paket", "şişe" };
+            //double[] fiyat = { 28.90, 33.40, 24.10, 3.10, 7, 40, 45 };
+            //double[] kdv = { (fiyat[0] * 1 / 100), (fiyat[1] * 1 / 100), (fiyat[2] * 1 / 100), (fiyat[3] * 1 / 100), (fiyat[4] * 1 / 100), (fiyat[5] * 1 / 100), (fiyat[6] * 8 / 100) };
+            //double toplam = 0;
+            //double kdvtop = 0;
+
+            //Console.WriteLine("WahitShop'a Hoşgeldinizzz...");
+
+            //for (int i = 0; i < urunler.Length; i++)
+            //{
+            //    Console.WriteLine($"{(i + 1)} ){urunler[i]} \t {fiyat[i]} TL");
+            //}
+
+            //while (secim == "e")
+            //{
+            //    Console.WriteLine("Ne Almak İstersiniz ? ");
+            //    string musterisecim = Console.ReadLine();
+            //    for (int i = 0; i < urunler.Length; i++)
+            //    {
+            //        if (musterisecim == urunler[i])
+            //        {
+            //            Console.WriteLine($"Kaç {birim[i]} Almak İstersiniz ?");
+            //            int adet = Convert.ToInt32(Console.ReadLine());
+            //            toplam += adet*fiyat[i];
+            //            kdvtop += adet*kdv[i];
+            //        }
+            //    }
+            //    Console.WriteLine("Alışverişe devam etmek istiyor musunuz ?");
+            //    secim = Console.ReadLine();
+
+            //}
+            //Console.WriteLine("Ara toplam = " + (toplam - kdvtop) + " TL");
+            //Console.WriteLine("KDV Toplamı = " + kdvtop + " TL");
+            //Console.WriteLine("Toplam = " + toplam + " TL");
+
+            #endregion
+
+            #region Market Uygulamasında Alınan Her Şeyi Listeye Doldur
+
+            string secim = "e";
+            string[] urunler = { "domates", "biber", "patlıcan", "yumurta", "ekmek", "doritos", "kola" };
+            string[] birim = { "kg", "kg", "kg", "adet", "adet", "paket", "şişe" };
+            double[] fiyat = { 28.90, 33.40, 24.10, 3.10, 7, 40, 45 };
+            double[] kdv = { (fiyat[0] * 1 / 100), (fiyat[1] * 1 / 100), (fiyat[2] * 1 / 100), (fiyat[3] * 1 / 100), (fiyat[4] * 1 / 100), (fiyat[5] * 1 / 100), (fiyat[6] * 8 / 100) };
+            double toplam = 0;
+            double kdvtop = 0;
+            string sepet = "";
+            Console.WriteLine("WahitShop'a Hoşgeldinizzz...");
+
+            #region satın aldırma
+            for (int i = 0; i < urunler.Length; i++)
+            {
+                Console.WriteLine($"{(i + 1)} ){urunler[i]} \t {fiyat[i]} TL");
+            }
+
+            while (secim == "e")
+            {
+                Console.WriteLine("Ne Almak İstersiniz ? ");
+                string musterisecim = Console.ReadLine();
+                for (int i = 0; i < urunler.Length; i++)
+                {
+                    if (musterisecim == urunler[i])
+                    {
+                        Console.WriteLine($"Kaç {birim[i]} Almak İstersiniz ?");
+                        int adet = Convert.ToInt32(Console.ReadLine());
+                        toplam += adet * fiyat[i];
+                        kdvtop += adet * kdv[i];
+                        sepet += urunler[i] + " " + adet + birim[i] +  "\n";
+                    }
+                }
+                Console.WriteLine("Alışverişe devam etmek istiyor musunuz ?");
+                secim = Console.ReadLine();
+
+            }
+
+            #region fis
+            Console.WriteLine("Alışveriş Sepetiniz :\n" + sepet);
+            Console.WriteLine("Ara toplam = " + (toplam - kdvtop) + " TL");
+            Console.WriteLine("KDV Toplamı = " + kdvtop + " TL");
+            Console.WriteLine("Toplam = " + toplam + " TL");
+            #endregion
+
+            #endregion
+
+            #endregion
+
+            #region Konsoldan alınan sayı asal mı ?
+
+            //Console.WriteLine("Sayınızı giriniz :");
+            //int sayi = Convert.ToInt32(Console.ReadLine());
+            //bool asalcheck = true;
+            //for (int i = 2; i < sayi; i++)
+            //{
+            //    if (sayi % i ==0)
+            //    {
+            //        asalcheck = false;
+            //    }
+
+            //}
+            //if (asalcheck == true)
+            //{
+            //    Console.WriteLine("sayi asal");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("sayi asal deil");
+            //}
+            #endregion
+
+            #region Konsoldan alınan kelime polindrom mudur
+            //while (true)
+            //{
+            //    bool pol = false;
+
+            //    Console.WriteLine("Lütfen kelimeyi yazınız : ");
+            //    string word = Console.ReadLine(); //kabak k a b a k
+            //    0 1 2 3 4
+            //    char[] charWord = word.ToCharArray();
+            //    for (int i = 0; i < charWord.Length; i++)
+            //    {
+            //        for (int z = ((charWord.Length - 1)); z >= 0; z--)
+            //        {
+            //            if (charWord[i] == charWord[z])
+            //            {
+            //                pol = true;
+            //            }
+            //            else
+            //            {
+            //                pol = false;
+            //            }
+            //        }
+            //    }
+            //    if (pol == true)
+            //    {
+            //        Console.WriteLine("Kelimeniz polindrom kelimedir.");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Kelimeniz polindrom kelime değildir.");
+            //    }
+
+            //}
+
+            #endregion
+
+            #region İkiz asallar(aralarında asal olmayan 1 sayı barındıran asallar) 11-13
+            //123 (4) 5 (6) 789 (10) 11 (12) 1314151617 (18) 1920
+
+
+            #endregion
+
+            #region İçi boş tam baklava BİTMEDİ !!!
+
+            //   *
+            //  * *
+            // *   *
+            //*     *
+            // *   *
+            //  * *
+            //   *
+
+
+
+
+            #endregion
         }
     }
+
 }
